@@ -22,7 +22,8 @@ export class Post {
 	@Column({ type: "text" })
 	content!: string;
 
-	@Column({ nullable: true })
+	// @Column({ nullable: true })
+	@Column()
 	UserId!: number;
 
 	@ManyToOne((_type) => User, (user: User) => user.posts)
