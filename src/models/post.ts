@@ -24,7 +24,7 @@ export class Post {
 
 	// @Column({ nullable: true })
 	@Column()
-	UserId!: number;
+	userId!: number;
 
 	@ManyToOne((_type) => User, (user: User) => user.posts)
 	@JoinColumn()

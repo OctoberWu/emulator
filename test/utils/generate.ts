@@ -3,7 +3,7 @@ import { User, Post } from "../../src/models"
 
 export function generateUserData(overide = {}) {
   return {
-    id: faker.random.number(),
+    id: faker.datatype.number(),
     firstName: faker.name.firstName(),
     lastName: faker.name.lastName(),
     email: faker.internet.email(),
@@ -36,10 +36,10 @@ export function generateUserPayload() {
 
 export function generatePostData(overide = {}) {
   return {
-    id: faker.random.number(),
+    id: faker.datatype.number(),
     title: faker.lorem.sentence(),
     content: faker.lorem.paragraph(),
-    userId: faker.random.number(),
+    userId: faker.datatype.number(),
     comments: [],
     user: new User(),
     createdAt: new Date(),
@@ -63,17 +63,17 @@ export function generatePostPayload() {
   return {
     title: faker.lorem.sentence(),
     content: faker.lorem.paragraph(),
-    userId: faker.random.number(),
+    userId: faker.datatype.number(),
   };
 }
 
 export function generateCommentData(overide = {}) {
   return {
-    id: faker.random.number(),
+    id: faker.datatype.number(),
     content: faker.lorem.paragraph(),
-    userId: faker.random.number(),
+    userId: faker.datatype.number(),
     user: new User(),
-    postId: faker.random.number(),
+    postId: faker.datatype.number(),
     post: new Post(),
     createdAt: new Date(),
     updatedAt: new Date(),
@@ -95,7 +95,7 @@ export function generateCommentsData(n: number = 1, overide = {}) {
 export function generateCommentPayload() {
   return {
     content: faker.lorem.paragraph(),
-    userId: faker.random.number(),
-    postId: faker.random.number(),
+    userId: faker.datatype.number(),
+    postId: faker.datatype.number(),
   };
 }
